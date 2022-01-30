@@ -19,9 +19,13 @@ class ViewController: UIViewController {
   }
   
   @IBAction func pauseBTN(_ sender: Any) {
+    ourTimer.invalidate()
   }
   
   @IBAction func resetBTN(_ sender: Any) {
+    ourTimer.invalidate()
+    timerDisplayed = 0
+    label.text = "0"
   }
   
   @objc func Action() {
