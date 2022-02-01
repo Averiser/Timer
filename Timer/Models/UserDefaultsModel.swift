@@ -38,5 +38,52 @@ final class Announcer {
     }
   }
   
+  func saveAnnouncers() {
+    UserDefaults.standard.set(main, forKey: ANNOUNCER)
+    for index in 0...2 {
+      //save main switchers
+      UserDefaults(suiteName: TIMERS_NAMES[index])?.set(main[index], forKey: ANNOUNCER)
+      //save remaining
+      UserDefaults(suiteName: TIMERS_NAMES[index])?.set(remaining[index], forKey: REMAINING)
+      //save countdown
+      UserDefaults(suiteName: TIMERS_NAMES[index])?.set(countdown[index], forKey: COUNT_DOWN)
+    }
+  }
   
+}
+
+final class UserDefaultsModel {
+    let t1settings = UserDefaults(suiteName: TIMERS_NAMES[0])
+    let t2settings = UserDefaults(suiteName: TIMERS_NAMES[1])
+    let t3settings = UserDefaults(suiteName: TIMERS_NAMES[2])
+
+    init() {
+        if UserDefaults.standard.bool(forKey: DEFAULT_SETTING) == false {
+            UserDefaults.standard.set(true, forKey: DEFAULT_SETTING)
+            defaultSetting()
+        }
+    }
+
+    func defaultSetting() {
+        //set timers status to reset
+        UserDefaults.standard.set(-1, forKey: "targetTime")
+
+        //Set timers default time
+        t1settings?.set(30, forKey: TIME)
+        t1settings?.set(true, forKey: SCREEN_LOCK)
+        t2settings?.set(45, forKey: TIME)
+        t2settings?.set(true, forKey: SCREEN_LOCK)
+        t3settings?.set(1800, forKey: TIME)
+        t3settings?.set(true, forKey: SCREEN_LOCK)
+
+        //set the screen brightness lock for stopwatch
+        UserDefaults.standard.set(true, forKey: STOPWATCH_LOCK)
+
+        //Open the screen brightness lock
+        UserDefaults.standard.set(true, forKey: SCREEN_LOCK)
+        for index in 0...2 {
+            //save main switchers
+            UserDefaults(suiteName: TIMERS_NAMES[index])?.set(true, forKey: ANNOUNCER)
+        }
+    }
 }
