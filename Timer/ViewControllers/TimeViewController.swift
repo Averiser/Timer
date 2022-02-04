@@ -11,6 +11,43 @@ import AVFoundation
 class TimeViewController: UIViewController {
   
 var sound = AnnounceModel()
+  
+  override func viewDidLoad() {
+      super.viewDidLoad()
+      setButtonLabels()
+
+      self.navigationController?.navigationBar.isTranslucent = true
+
+      //Remove line between Navigationbar and View
+      self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+      self.navigationController?.navigationBar.shadowImage = UIImage()
+
+      //Add gesture to MainLabel
+      let tapLabel: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(resetTime))
+      tapLabel.delegate = self
+      mainLabel.isUserInteractionEnabled = true
+      mainLabel.addGestureRecognizer(tapLabel)
+
+      //Add gesture to UINavigationBar title
+      let tapTitle: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(resetTime))
+      tapTitle.delegate = self
+      self.navigationItem.titleView = resetLabel
+      self.navigationItem.titleView?.isUserInteractionEnabled = true
+      self.navigationItem.titleView?.addGestureRecognizer(tapTitle)
+
+      //Default MainLabel
+      display.font = display.font.withSize(500)
+      display.text = ""
+      display.minimumScaleFactor = 0.01
+      display.adjustsFontSizeToFitWidth = true
+      display.sizeToFit()
+
+      //Update display when defaults change
+      NotificationCenter.default.addObserver(self, selector: #selector(TimeViewController.setButtonLabels), name: UserDefaults.didChangeNotification, object: nil)
+      restoreStatus()
+  }
+  
+  
 //  var ourTimer = Timer()
 //  var timerDisplayed = 0
 //
