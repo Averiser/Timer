@@ -10,7 +10,15 @@ import AVFoundation
 
 class TimeViewController: UIViewController {
   
-var sound = AnnounceModel()
+  
+  @IBOutlet var timeBackground: UIView!
+  @IBOutlet weak var display: UILabel!
+  
+  @IBOutlet weak var t1Button: UIButton!
+  @IBOutlet weak var t2Button: UIButton!
+  @IBOutlet weak var t3Button: UIButton!
+  
+  var sound = AnnounceModel()
   
   override func viewDidLoad() {
       super.viewDidLoad()
