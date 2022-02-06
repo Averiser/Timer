@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E40B850527B06D070018995F /* SettingNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B850427B06D070018995F /* SettingNavigationController.swift */; };
 		E4382A4B27A453AF00D7CE7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4382A4A27A453AF00D7CE7F /* AppDelegate.swift */; };
 		E4382A4D27A453AF00D7CE7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4382A4C27A453AF00D7CE7F /* SceneDelegate.swift */; };
 		E4382A4F27A453AF00D7CE7F /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4382A4E27A453AF00D7CE7F /* TimeViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E40B850427B06D070018995F /* SettingNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNavigationController.swift; sourceTree = "<group>"; };
 		E4382A4727A453AF00D7CE7F /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4382A4A27A453AF00D7CE7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4382A4C27A453AF00D7CE7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				E4382A4E27A453AF00D7CE7F /* TimeViewController.swift */,
+				E40B850427B06D070018995F /* SettingNavigationController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				E4382A6127A8340400D7CE7F /* AnnounceModel.swift in Sources */,
 				E4382A6327A836AB00D7CE7F /* UserDefaultsModel.swift in Sources */,
 				E4382A4D27A453AF00D7CE7F /* SceneDelegate.swift in Sources */,
+				E40B850527B06D070018995F /* SettingNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
