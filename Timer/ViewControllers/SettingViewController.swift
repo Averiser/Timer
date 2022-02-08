@@ -126,3 +126,37 @@ class SettingViewController: UIViewController {
         }
     }
 }
+
+extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let textOn = NSLocalizedString("On", comment: "")
+        let textOff = NSLocalizedString("Off", comment: "")
+        let cell: UITableViewCell
+        switch indexPath.row {
+        case 0:
+            cell = tableView.dequeueReusableCell(withIdentifier: "sound")!
+            cell.detailTextLabel?.text = textOff
+            if screenLock.mainLock {
+                if screenLock.timerLocks[selectedTimer] {
+                    cell.detailTextLabel?.text = textOn
+                }
+            }
+        case 1:
+            cell = tableView.dequeueReusableCell(withIdentifier: "announcer")!
+            cell.detailTextLabel?.text = announcer.main[selectedTimer] ? textOn : textOff
+        default:
+            fatalError("Table cell is out of index")
+        }
+
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //cancel highlight after selected
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
