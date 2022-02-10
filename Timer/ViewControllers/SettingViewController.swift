@@ -160,3 +160,36 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
+
+extension SettingViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = "\(row)"
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font: UIFont(name: "Georgia", size: 15.0)!, NSAttributedString.Key.foregroundColor: UIColor.white])
+        return myTitle
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let textTimer = NSLocalizedString("Timer", comment: "")
+        timePickView.timeChanged(row: row, component: component)
+        //if time equals 0s, return to 1s
+        if timePickView.totalTimeInSeconds == 0 {
+            timePickView.selectRow(1, inComponent: 2, animated: true)
+            timePickView.timeChanged(row: 1, component: 2)
+        }
+        selectedButton?.setTitle(" " + textTimer + " " + String(selectedTimer + 1) + ":  " + timePickView.totalTimeInSeconds.convertTotalToSetting(), for: .normal)
+        timers[selectedTimer].time = timePickView.totalTimeInSeconds
+    }
+
+    func setPickerValue(timerNum: Int) {
+        let time: Int = timers[timerNum].time
+        let seconds = time % 60
+        let minutes = (time / 60) % 60
+        let hours = (time / 3600)
+        timePickView.seconds = seconds
+        timePickView.minutes = minutes
+        timePickView.hours = hours
+        timePickView.selectRow(hours, inComponent: 0, animated: true)
+        timePickView.selectRow(minutes, inComponent: 1, animated: true)
+        timePickView.selectRow(seconds, inComponent: 2, animated: true)
+    }
+}
