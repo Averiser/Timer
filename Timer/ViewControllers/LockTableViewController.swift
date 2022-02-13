@@ -61,3 +61,24 @@ class LockTableViewController: UITableViewController {
 
       return cell
   }
+
+  @objc func closeLock(sender: AnyObject) {
+      screenLock?.mainLock = sender.isOn
+      if sender.isOn {
+          sectionNum = 2
+          let indexSet = IndexSet([1])
+          tableView.insertSections(indexSet, with: .fade)
+      } else {
+          let indexSet = IndexSet([1])
+          tableView.deleteSections(indexSet, with: .fade)
+      }
+  }
+
+  @objc func closeLocks(sender: AnyObject) {
+      if sender.tag == 3 {
+          screenLock?.stopwatchLock = sender.isOn
+      } else {
+          screenLock?.timerLocks[sender.tag] = sender.isOn
+      }
+  }
+}
