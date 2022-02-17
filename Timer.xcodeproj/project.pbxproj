@@ -10,6 +10,7 @@
 		E40B850527B06D070018995F /* SettingNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B850427B06D070018995F /* SettingNavigationController.swift */; };
 		E40B850727B1696F0018995F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B850627B1696F0018995F /* SettingViewController.swift */; };
 		E40B850927B855E40018995F /* LockTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B850827B855E40018995F /* LockTableViewController.swift */; };
+		E40B850B27BEA2790018995F /* AnnouncerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40B850A27BEA2790018995F /* AnnouncerTableViewController.swift */; };
 		E4382A4B27A453AF00D7CE7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4382A4A27A453AF00D7CE7F /* AppDelegate.swift */; };
 		E4382A4D27A453AF00D7CE7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4382A4C27A453AF00D7CE7F /* SceneDelegate.swift */; };
 		E4382A4F27A453AF00D7CE7F /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4382A4E27A453AF00D7CE7F /* TimeViewController.swift */; };
@@ -25,6 +26,7 @@
 		E40B850427B06D070018995F /* SettingNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNavigationController.swift; sourceTree = "<group>"; };
 		E40B850627B1696F0018995F /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		E40B850827B855E40018995F /* LockTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockTableViewController.swift; sourceTree = "<group>"; };
+		E40B850A27BEA2790018995F /* AnnouncerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncerTableViewController.swift; sourceTree = "<group>"; };
 		E4382A4727A453AF00D7CE7F /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4382A4A27A453AF00D7CE7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4382A4C27A453AF00D7CE7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				E40B850427B06D070018995F /* SettingNavigationController.swift */,
 				E40B850627B1696F0018995F /* SettingViewController.swift */,
 				E40B850827B855E40018995F /* LockTableViewController.swift */,
+				E40B850A27BEA2790018995F /* AnnouncerTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				E4382A4B27A453AF00D7CE7F /* AppDelegate.swift in Sources */,
 				E40B850727B1696F0018995F /* SettingViewController.swift in Sources */,
 				E4382A6127A8340400D7CE7F /* AnnounceModel.swift in Sources */,
+				E40B850B27BEA2790018995F /* AnnouncerTableViewController.swift in Sources */,
 				E4382A6327A836AB00D7CE7F /* UserDefaultsModel.swift in Sources */,
 				E40B850927B855E40018995F /* LockTableViewController.swift in Sources */,
 				E4382A4D27A453AF00D7CE7F /* SceneDelegate.swift in Sources */,
